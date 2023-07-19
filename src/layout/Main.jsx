@@ -16,6 +16,10 @@ class Main extends React.Component {
         fetch(this.state.url + 'shrek')
             .then(response => response.json())
             .then(result => this.setState({movies: result.Search, loading: false}))
+            .catch((err) => {
+                console.error(err);
+                this.setState({ loading: false });
+            })
     }
 
     searchMovies = (state) => {
@@ -23,6 +27,10 @@ class Main extends React.Component {
         fetch(this.state.url + state.search + (state.type ? "&type=" + state.type: ''))
             .then(response => response.json())
             .then(result => this.setState({movies: result.Search, loading: false}))
+            .catch((err) => {
+                console.error(err);
+                this.setState({ loading: false });
+            })
     }
     
     render() {
