@@ -9,7 +9,7 @@ class Main extends React.Component {
     state = {
         movies: [],
         loading: true,
-        url: `http://www.omdbapi.com/?apikey=${API_KEY}&s=`
+        url: `https://www.omdbapi.com/?apikey=${API_KEY}&s=`
     }
 
     componentDidMount () {
